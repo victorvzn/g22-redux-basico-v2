@@ -11,6 +11,13 @@ const ShoppingCart = () => {
     dispatch(removeFromCart(productId))
   }
 
+  const total = cart.reduce((acc, product) => {
+    const qty = product.quantity
+    const price = product.price
+    const subtotal = qty * price
+    return acc + subtotal
+  }, 0)
+
   return (
     <div>
       <h3>ShoppingCart</h3>
@@ -27,6 +34,9 @@ const ShoppingCart = () => {
             </button>
           )
         })}
+      </div>
+      <div style={{ paddingTop: '10px' }}>
+        <strong>TOTAL:</strong> S/ {total}
       </div>
     </div>
   )
