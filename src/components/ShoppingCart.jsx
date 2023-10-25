@@ -23,7 +23,7 @@ const ShoppingCart = () => {
               style={{ backgroundColor: 'blue'}}
               onClick={() => handleRemoveFromCart(product.id)}
             >
-              {product.title} - S/ {product.price}
+              {product.title} - S/ {product.price} (qty: {product.quantity})
             </button>
           )
         })}
